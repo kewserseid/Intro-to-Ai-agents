@@ -68,12 +68,13 @@ cfp_reviewer = ConversableAgent(
     human_input_mode = "NEVER",
     function_map = None
 )
+user_idea = input("Enter your rough CFP idea (what your talk is about):\n")
 
-# Initial CFP Generation
-initial_cfp_generation_reply = initial_cfp_writer.generate_reply(
-    messages=[{"content": "I would like to submit a CFP for a talk on multi-agents. These agents will use the Agentic framework and Gemini models", 
-               "role": "user"}])
+initial_cfp = initial_cfp_writer.generate_reply(
+    messages=[{"content": user_idea, "role": "user"}])
 
-cfp_writer.initiate_chat(cfp_reviewer,
-                         message="Following is a rough idea for which I would like a talk proposal that I can submit: \n" 
-                         + initial_cfp_generation_reply["content"], max_turns=2)
+cfp_writer.initiate_chat(
+    cfp_reviewer,
+    message=f"Following is a rough idea for which I would like a talk proposal that I can submit:\n{initial_cfp['content']}",
+    max_turns=2
+)

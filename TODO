@@ -1,0 +1,41 @@
+🎯 Objective:
+Create a multi-agent system where agents self-plan, research, collaborate, and summarize information on a given technical topic — using tools (like Google Search APIs, file saving, embedding search). 
+
+🧩 What They’ll Build:
+At least 3 agents, each with different roles:
+
+📚 Researcher Agent – uses search APIs or knowledge base to gather information
+
+✍️ Writer Agent – drafts a technical document
+
+🔎 Fact-Checker Agent – validates sources and findings
+
+Agents should:
+
+Use external tools (API calls, file system, embedding-based memory like FAISS)
+
+Work autonomously after user gives a single goal
+
+Handle error recovery: e.g., if research fails, retry or switch methods
+
+💡 Example Use Case:
+User inputs:
+
+“Prepare a 2-page summary on the newest LLM optimization techniques.”
+
+Then:
+
+Researcher fetches online data / internal documents
+
+Writer organizes info into sections
+
+Fact-Checker verifies claims
+
+Writer refines final document based on feedback
+
+→ Final Output: A polished, verified technical report generated almost autonomously!
+
+Bonus:
+Adding a 🧠 Memory Manager Agent – stores important findings into a memory DB
+Use a memory store: recall previous facts to avoid redundant research
+Memory Manager stores relevant pieces
